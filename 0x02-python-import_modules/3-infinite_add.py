@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 if __name__ == "__main__":
-    import sys
+    from sys import argv
     numarg = 0
-    for i in sys.argv[1:]:
-        numarg = numarg + int(i)
+    for num in argv[1:]:
+        numarg = numarg + int(num)
         print(numarg)
