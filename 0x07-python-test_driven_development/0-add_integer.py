@@ -1,133 +1,79 @@
-Skip to content
+#!/usr/bin/python3
 
-Search or jump to…
+"""A module to add two numbers
 
-Pull requests
+This module performs the addition operation between two numbers,
 
-Issues
+these numbers can be integers or floats.
 
-Marketplace
+"""
 
-Explore
 
- 
 
- @tbir8256 
 
- monoprosito
 
- /
+def add_integer(a, b=98):
 
- holbertonschool-higher_level_programming
+        """Adds two numbers
 
- Public
+            Performs the addition between two numbers.
 
- Code
+                Args:
 
- Issues
+                        a (:obj:`int, float`): The first number.
 
- Pull requests
+                                b (:obj:`int, float`, optional): The second number.
 
- Actions
+                                    Returns:
 
- Projects
+                                            int: The result of the addition.
 
- Security
+                                                """
 
- Insights
+                                                    if type(a) not in (int, float):
 
- holbertonschool-higher_level_programming/0x07-python-test_driven_development/0-add_integer.py /
+                                                                raise TypeError('a must be an integer')
 
- @monoprosito
 
- monoprosito Refactor some conditions
 
- Latest commit 9ee20de on Jan 14, 2020
+                                                                if type(b) not in (int, float):
 
-  History
+                                                                            raise TypeError('b must be an integer')
 
-   1 contributor
 
-   Executable File  50 lines (33 sloc)  1018 Bytes
 
+                                                                            a = convert_to_int(a)
 
+                                                                                b = convert_to_int(b)
 
-   #!/usr/bin/python3
+                                                                                    return a + b
 
-   """A module to add two numbers
 
-   This module performs the addition operation between two numbers,
 
-   these numbers can be integers or floats.
 
-   """
 
+                                                                                def convert_to_int(num):
 
+                                                                                        """Cast the data type of num parameter
 
+                                                                                            Convert a float number to a integer number
 
+                                                                                                Args:
 
-   def add_integer(a, b=98):
+                                                                                                        num (:obj:`int, float`): The number to cast.
 
-           """Adds two numbers
+                                                                                                            Returns:
 
-               Performs the addition between two numbers.
+                                                                                                                    int: The number casted to integer.
 
-                   Args:
+                                                                                                                        """
 
-                           a (:obj:`int, float`): The first number.
+                                                                                                                            if type(num) is float:
 
-                                   b (:obj:`int, float`, optional): The second number.
+                                                                                                                                        num = int(num)
 
-                                       Returns:
+                                                                                                                                                return num
 
-                                               int: The result of the addition.
 
-                                                   """
 
-                                                       if type(a) not in (int, float):
-
-                                                                   raise TypeError('a must be an integer')
-
-
-
-                                                                   if type(b) not in (int, float):
-
-                                                                               raise TypeError('b must be an integer')
-
-
-
-                                                                               a = convert_to_int(a)
-
-                                                                                   b = convert_to_int(b)
-
-                                                                                       return a + b
-
-
-
-
-
-                                                                                   def convert_to_int(num):
-
-                                                                                           """Cast the data type of num parameter
-
-                                                                                               Convert a float number to a integer number
-
-                                                                                                   Args:
-
-                                                                                                           num (:obj:`int, float`): The number to cast.
-
-                                                                                                               Returns:
-
-                                                                                                                       int: The number casted to integer.
-
-                                                                                                                           """
-
-                                                                                                                               if type(num) is float:
-
-                                                                                                                                           num = int(num)
-
-                                                                                                                                                   return num
-
-
-
-                                                                                                                                                   return num
+                                                                                                                                                return num
