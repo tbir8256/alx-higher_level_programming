@@ -2,7 +2,9 @@
 
 """
 
-    Contains a single function that prints a square
+Module print_square
+
+prints a square with # of area of size
 
 """
 
@@ -12,17 +14,21 @@
 
 def print_square(size):
     
-    """Prints a square with the character `#`"""
+    """
+
+    print a square wher size is used
+
+    as the length and width
+
+    """
     
 
     
-    if not isinstance(size, (int, float)):
+    if size is None or not isinstance(size, int):
         
         raise TypeError("size must be an integer")
     
-    if isinstance(size, float) and size < 0:
-        
-        raise TypeError("size must be an integer")
+
     
     if size < 0:
         
@@ -30,12 +36,16 @@ def print_square(size):
     
 
     
-    size = int(size) if isinstance(size, float) else size
-    
-    for i in range(size):
+    if size == 0:
         
-        for j in range(size):
-            
-            print("#", end="")
-            
         print()
+        
+    else:
+        
+        for i in range(size):
+            
+            for j in range(size):
+                
+                print("#", end="")
+                
+            print()
