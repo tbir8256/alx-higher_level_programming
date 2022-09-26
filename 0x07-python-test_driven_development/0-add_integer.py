@@ -1,10 +1,10 @@
 #!/usr/bin/python3
 
-"""A module to add two numbers
+"""
 
-This module performs the addition operation between two numbers,
+    Defines a function that calculates addition
 
-these numbers can be integers or floats.
+    of two integers
 
 """
 
@@ -13,62 +13,25 @@ these numbers can be integers or floats.
 
 
 def add_integer(a, b=98):
+    
+    """Calculates sum of two integers"""
+    
+
+    
+    if not isinstance(a, (int, float)):
         
-    """Adds two numbers
-
-    Performs the addition between two numbers.
-
-    Args:
-
-        a (:obj:`int, float`): The first number.
-
-        b (:obj:`int, float`, optional): The second number.
-
-    Returns:
-
-        int: The result of the addition.
-
-    """
+        raise TypeError("a must be an integer")
     
-    if type(a) not in (int, float):
-            
-        raise TypeError('a must be an integer')
-
-
-
-    if type(b) not in (int, float):
-            
-        raise TypeError('b must be an integer')
-
-
-
-    a = convert_to_int(a)
-    
-    b = convert_to_int(b)
-    
-    return a + b
-def convert_to_int(num):
+    if not isinstance(b, (int, float)):
         
-    """Cast the data type of num parameter
-
-    Convert a float number to a integer number
-
-    Args:
-
-        num (:obj:`int, float`): The number to cast.
-
-    Returns:
-
-        int: The number casted to integer.
-
-    """
+        raise TypeError("b must be an integer")
     
-    if type(num) is float:
-            
-        num = int(num)
-        
-        return num
 
+    
+    a = int(a) if isinstance(a, float) else a
+    
+    b = int(b) if isinstance(b, float) else b
+    
 
-
-    return num
+    
+    return (a + b)
