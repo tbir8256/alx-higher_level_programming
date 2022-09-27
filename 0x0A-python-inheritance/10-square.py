@@ -1,35 +1,37 @@
 #!/usr/bin/python3
 
-"""Contains a class `MyInt` that inherits from `int`"""
+"""
+
+Contains the class BaseGeometry and subclass Rectangle
+
+"""
+
+
+
+Rectangle = __import__('9-rectangle').Rectangle
 
 
 
 
 
-class MyInt(int):
+class Square(Rectangle):
+    
+    """A representation of a square"""
+    
+    def __init__(self, size):
+        
+        """instantiation of the square"""
+        
+        self.integer_validator("size", size)
+        
+        self.__size = size
+        
+        super().__init__(size, size)
+        
 
-    """Inherits from int base class"""
-
-    def __init__(self, value):
-
-        """Initialize value"""
-
-        self.value = value
-
-
-
-    def __ne__(self, x):
-
-        """not equal to comparison"""
-
-        if self.value is x:
-
-            return True
-
-
-
-    def __eq__(self, x):
-
-        """equal to comparison"""
-
-        return not self.__ne__(x)
+        
+    def area(self):
+        
+        """"returns the area of the square"""
+        
+        return self.__size ** 2
