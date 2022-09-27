@@ -9,7 +9,7 @@
 
 
 def lookup(obj):
-    
+
     """
 
         Return list of available object and methods
@@ -17,5 +17,5 @@ def lookup(obj):
         in an object
 
     """
-    
+
     return dir(obj)
