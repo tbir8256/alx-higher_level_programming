@@ -1,18 +1,39 @@
+#!/usr/bin/python3
 
-"""Contain a single function"""
+"""Module 101-add_attribute.
+
+Checks if an attribute can be added to an object.
+
+"""
 
 
 
 
 
-def add_attribute(self, attribute, value):
+def add_attribute(an_obj, an_attr, a_value):
+    
+    """Checks if an_attr of value a_value can be added to an_obj.
 
-    """Add attribute if it's possible."""
+    Args:
 
-    if hasattr(self, '__dict__'):
+        - an_obj: object to add the attribute to
 
-        setattr(self, attribute, value)
+        - an_attr: name of the attribute
 
-    else:
+        - a_value: value of the attribute to add
 
+    """
+    
+
+    
+    if not hasattr(an_obj, '__slots__') and not hasattr(an_obj, '__dict__'):
+        
         raise TypeError("can't add new attribute")
+    
+    if hasattr(an_obj, '__slots__') and not hasattr(an_obj, an_attr):
+        
+        raise TypeError("can't add new attribute")
+    
+
+    
+    setattr(an_obj, an_attr, a_value)
