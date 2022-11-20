@@ -1,6 +1,7 @@
 #!/usr/bin/python3
-def slower(i):
-    if ord(i) >= ord('a') and ord(i) <= ord('z'):
+def islower(c):
+    check = ord(c)
+    if check >= 97 and check <= 122:
         return True
     else:
         return False
