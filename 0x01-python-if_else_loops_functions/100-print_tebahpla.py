@@ -1,6 +1,7 @@
 #!/usr/bin/python3
-# Author -Bamidele Adefolaju
 
-i = 0
-for c in range(ord('z'), ord('a') - 1, -2):
-    print("{:c}{:s}".format(chr(c - 33)), end="")
+for i in reversed(range(97, 123)):
+    if i % 2 == 0:
+        print('{:c}'.format(i), end='')
+    else:
+        print('{:c}'.format(i - 32), end='')
