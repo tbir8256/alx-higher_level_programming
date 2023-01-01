@@ -1,3 +1,3 @@
 #!/bin/bash
-# script that sends a JSON POST request to a URL passed as the first argument, and displays the body of the response.
-curl -s -X POST -H "Content-Type: application/json" -d @"$2" "$1"
+# send a request and only show the status code
+curl -s -o /dev/null -I --w "%{http_code}" "$1"
