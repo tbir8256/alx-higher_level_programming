@@ -1,10 +1,11 @@
 #!/usr/bin/node
 
-const { dict } = require('./101-data');
+const dict = require('./101-data').dict;
+const newDict = {};
 
-console.log(Object.entries(dict).reduce((d, el) => {
-  !d[el[1]]
-    ? d[el[1]] = [el[0]]
-    : d[el[1]].push(el[0]);
-  return d;
-}, {}));
+Object.keys(dict).map(function (key) {
+  if (!Array.isArray(newDict[dict[key]])) {
+    newDict[dict[key]] = [];
+  }
+  newDict[dict[key]].push(key);
+});
